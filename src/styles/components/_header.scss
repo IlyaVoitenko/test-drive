@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  .address {
+    color: rgba(255, 255, 255, 0.46);
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 30%;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+
+    width: 50%;
+    a {
+      font-family: Inter;
+      font-weight: 500;
+      font-style: medium;
+      font-size: 18px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      color: rgba(255, 255, 255, 1);
+      text-decoration: none;
+    }
+  }
+}

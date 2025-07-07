@@ -1,0 +1,24 @@
+@use "../abstracts/colors" as *;
+
+.page {
+  background-color: $bgColorPage;
+  height: 100vh;
+}
+.drivingContainer {
+  display: flex;
+  flex-direction: row;
+}
+.pc1 {
+  transform: skewX(-30deg);
+  background-color: white;
+
+  height: 796px;
+  width: 30%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-image: url("../../assets/CarMainFull1x.png");
+    background-size: cover;
+  }
+}
