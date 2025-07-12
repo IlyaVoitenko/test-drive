@@ -6,19 +6,61 @@
 }
 .drivingContainer {
   display: flex;
+  width: 100%;
+  height: 824px;
   flex-direction: row;
+  position: relative;
+  justify-content: space-between;
+}
+.pc1,
+.pc2 {
+  height: 824px;
+  background-image: url("../../assets/CarMainFull1x.png");
+  background-position-x: right;
 }
 .pc1 {
-  transform: skewX(-30deg);
-  background-color: white;
-
-  height: 796px;
   width: 30%;
-  img {
-    width: 100%;
+  // border-top-right-radius: 25px;
+  // border-bottom-right-radius: 25px;
+  background-position-x: 95%;
+  // clip-path: polygon(0 0, 85% 0%, 45% 100%, 0% 100%);
+}
+.pc2 {
+  width: 55%;
+  // border-top-left-radius: 25px;
+  // border-bottom-left-radius: 25px;
+  // clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.block1 {
+  transform: skewX(-19deg);
+  background-color: $bgColorPage;
+  position: absolute;
+  left: 20%;
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .rside {
+    background-color: beige;
+    width: 10%;
     height: 100%;
-    object-fit: cover;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
     background-image: url("../../assets/CarMainFull1x.png");
-    background-size: cover;
+    background-position-x: 10%;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -1%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+  }
+  .lside {
   }
 }
