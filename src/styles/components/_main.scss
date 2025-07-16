@@ -1,4 +1,5 @@
 @use "../abstracts/colors" as *;
+@use "../abstracts/fonts" as *;
 
 .page {
   background-color: $bgColorPage;
@@ -7,60 +8,79 @@
 .drivingContainer {
   display: flex;
   width: 100%;
-  height: 824px;
+  height: 933px;
   flex-direction: row;
   position: relative;
   justify-content: space-between;
 }
-.pc1,
-.pc2 {
-  height: 824px;
-  background-image: url("../../assets/CarMainFull1x.png");
+.pictureLeft,
+.pictureRight {
+  height: 100%;
+  background-image: -webkit-image-set(
+    url("../../assets/CarMainFull.webp") 1x type("image/webp"),
+    url("../../assets/CarMainFull_2x.webp") 2x type("image/webp"),
+    url("../../assets/CarMainFull_3x.webp") 3x type("image/webp"),
+    url("../../assets/CarMainFull.png") 1x type("image/png"),
+    url("../../assets/CarMainFull_2x.png") 2x type("image/png"),
+    url("../../assets/CarMainFull_3x.png") 3x type("image/png")
+  );
+  background-image: image-set(
+    url("../../assets/CarMainFull.webp") 1x type("image/webp"),
+    url("../../assets/CarMainFull_2x.webp") 2x type("image/webp"),
+    url("../../assets/CarMainFull_3x.webp") 3x type("image/webp"),
+    url("../../assets/CarMainFull.png") 1x type("image/png"),
+    url("../../assets/CarMainFull_2x.png") 2x type("image/png"),
+    url("../../assets/CarMainFull_3x.png") 3x type("image/png")
+  );
   background-position-x: right;
 }
-.pc1 {
+.pictureLeft {
   width: 30%;
-  // border-top-right-radius: 25px;
-  // border-bottom-right-radius: 25px;
   background-position-x: 95%;
-  // clip-path: polygon(0 0, 85% 0%, 45% 100%, 0% 100%);
 }
-.pc2 {
+.pictureRight {
   width: 55%;
-  // border-top-left-radius: 25px;
-  // border-bottom-left-radius: 25px;
-  // clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
-.block1 {
+.contentContainer {
+  display: flex;
+  flex-direction: column;
   transform: skewX(-19deg);
   background-color: $bgColorPage;
   position: absolute;
   left: 20%;
   height: 100%;
-  width: 30%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  .rside {
-    background-color: beige;
-    width: 10%;
-    height: 100%;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    background-image: url("../../assets/CarMainFull1x.png");
-    background-position-x: 10%;
-    background-repeat: no-repeat;
-    position: absolute;
-    left: -1%;
+  width: 32%;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-top-right-radius: 25px;
-      border-bottom-right-radius: 25px;
-    }
+  .title {
+    font-family: $font;
+    font-weight: 700;
+    line-height: 100%;
+    font-size: 2.5rem;
+    background: linear-gradient(40deg, #ffff, #fbc201);
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: skewX(19deg);
   }
-  .lside {
+  .subtitle {
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+    font-family: $font;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 21px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+    transform: skewX(19deg);
+    width: 70%;
+    background: linear-gradient(90deg, #ffffffbb, #fff6c3, #fbc201);
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
