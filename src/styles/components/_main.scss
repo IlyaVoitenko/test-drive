@@ -11,9 +11,25 @@
   position: relative;
   justify-content: space-between;
 
-  @include for-desktop {
+  @include for-mobileS {
+    height: 100%;
     width: 100%;
-    height: 933px;
+  }
+  @include for-mobileM {
+    height: 100%;
+    width: 100%;
+  }
+  @include for-mobileL {
+    height: 25%;
+    width: 100%;
+  }
+  @include for-tablet {
+    height: 243px;
+    width: 100%;
+  }
+  @include for-laptop {
+    height: 400px;
+    width: 100%;
   }
   @include for-laptopL {
     height: 400px;
@@ -22,6 +38,10 @@
   @include for-macBook16 {
     height: 400px;
     width: 100%;
+  }
+  @include for-desktop {
+    width: 100%;
+    height: 933px;
   }
 }
 .pictureLeft,
@@ -44,7 +64,21 @@
     url("../../assets/CarMainFull_3x.png") 3x type("image/png")
   );
   background-position-x: right;
-
+  @include for-mobile {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  @include for-tablet {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  @include for-laptop {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
   @include for-laptopL {
     background-size: cover;
     background-repeat: no-repeat;
@@ -59,10 +93,28 @@
 .pictureLeft {
   width: 30%;
   background-position-x: 95%;
+
+  @include for-mobileL {
+    background-position-x: 100%;
+  }
+  @include for-tablet {
+    width: 30%;
+    background-position-x: 100%;
+  }
 }
 .pictureRight {
   width: 55%;
 
+  @include for-mobileL {
+    background-position-x: 100%;
+  }
+  @include for-tablet {
+    background-position-x: 100%;
+  }
+  @include for-laptop {
+    width: 70%;
+    background-position-x: 100%;
+  }
   @include for-laptopL {
     width: 58%;
   }
@@ -85,6 +137,29 @@
   padding-top: 6%;
   padding-left: 5%;
 
+  @include for-mobileM {
+    left: 14%;
+    width: 31%;
+    padding-top: 3%;
+    padding-left: 2%;
+  }
+  @include for-mobileL {
+    left: 14%;
+    width: 31%;
+    padding-top: 3%;
+    padding-left: 2%;
+  }
+  @include for-tablet {
+    width: 31%;
+    left: 18%;
+    padding-top: 4%;
+    padding-left: 3%;
+  }
+  @include for-laptop {
+    width: 32%;
+    padding-top: 3%;
+    padding-left: 3%;
+  }
   @include for-laptopL {
     left: 21%;
   }
@@ -104,6 +179,18 @@
     -webkit-text-fill-color: transparent;
     transform: skewX(19deg);
 
+    @include for-mobileM {
+      font-size: 0.7rem;
+    }
+    @include for-mobileL {
+      font-size: 0.7rem;
+    }
+    @include for-tablet {
+      font-size: 1rem;
+    }
+    @include for-laptop {
+      font-size: 1.3rem;
+    }
     @include for-laptopL {
       font-size: 1.5rem;
     }
@@ -126,17 +213,39 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    @include for-desktop {
-      width: 70%;
-      margin-top: 1.5rem;
-      margin-left: 1.5rem;
-      font-size: 21px;
+    @include for-mobileM {
+      font-size: 0.3rem;
+      margin-top: 0.5rem;
+      margin-left: 0.4rem;
     }
+    @include for-mobileL {
+      font-size: 0.3rem;
+      margin-top: 0.5rem;
+      margin-left: 0.4rem;
+    }
+    @include for-tablet {
+      margin-top: 0.5rem;
+      margin-left: 0.5rem;
+      font-size: 9px;
+    }
+    @include for-laptop {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      margin-left: 0.7rem;
+      font-size: 12px;
+    }
+
     @include for-laptopL {
       width: 100%;
       margin-top: 1rem;
       margin-left: 1rem;
       font-size: 15px;
+    }
+    @include for-desktop {
+      width: 70%;
+      margin-top: 1.5rem;
+      margin-left: 1.5rem;
+      font-size: 21px;
     }
     @include for-macBook16 {
       width: 95%;
@@ -151,6 +260,18 @@
   position: absolute;
   z-index: 2;
 
+  @include for-mobileL {
+    right: 5%;
+    bottom: -5%;
+  }
+  @include for-tablet {
+    right: 3%;
+    bottom: -4%;
+  }
+  @include for-laptop {
+    right: 4%;
+    bottom: -3%;
+  }
   @include for-desktop {
     right: 3.8%;
     bottom: -3%;
@@ -165,6 +286,19 @@
   }
   .carImage {
     transform: scale(1.1);
+
+    @include for-mobileL {
+      height: 200px;
+      width: 326px;
+    }
+    @include for-tablet {
+      width: 100%;
+      height: 255px;
+    }
+    @include for-laptop {
+      width: 100%;
+      height: 418px;
+    }
     @include for-laptopL {
       width: 100%;
       height: 425px;

@@ -1,17 +1,17 @@
 @use "./variables" as *;
 
 @mixin for-mobileS {
-  @media (min-width: $mobileMin) and (max-width <= $mobileS) {
+  @media (min-width: $mobileMin) and (max-width: $mobileS - 1) {
     @content;
   }
 }
 @mixin for-mobileM {
-  @media (min-width > $mobileS) and (max-width < $mobileM) {
+  @media (min-width: $mobileS) and (max-width: $mobileM -1) {
     @content;
   }
 }
 @mixin for-mobileL {
-  @media (min-width >= $mobileM) and (max-width <= $mobile) {
+  @media (min-width: $mobileM) and (max-width: $mobile - 1) {
     @content;
   }
 }
@@ -21,12 +21,12 @@
   }
 }
 @mixin for-tablet {
-  @media (min-width >= $mobile) and (max-width < $tablet) {
+  @media (min-width: $mobile) and (max-width: $laptop - 1) {
     @content;
   }
 }
 @mixin for-laptop {
-  @media (min-width >= $laptop) and (max-width < $laptopL) {
+  @media (min-width: $laptop) and (max-width: $laptopL) {
     @content;
   }
 }
