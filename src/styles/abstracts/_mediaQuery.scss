@@ -1,22 +1,52 @@
 @use "./variables" as *;
 
+@mixin for-mobileS {
+  @media (min-width: $mobileMin) and (max-width <= $mobileS) {
+    @content;
+  }
+}
+@mixin for-mobileM {
+  @media (min-width > $mobileS) and (max-width < $mobileM) {
+    @content;
+  }
+}
+@mixin for-mobileL {
+  @media (min-width >= $mobileM) and (max-width <= $mobile) {
+    @content;
+  }
+}
 @mixin for-mobile {
   @media (width <= $mobile) {
     @content;
   }
 }
 @mixin for-tablet {
-  @media (min-width >= $mobile <= $tablet) {
+  @media (min-width >= $mobile) and (max-width < $tablet) {
     @content;
   }
 }
 @mixin for-laptop {
-  @media (min-width > $tablet) {
+  @media (min-width >= $laptop) and (max-width < $laptopL) {
+    @content;
+  }
+}
+@mixin for-laptopL {
+  @media (min-width: $laptopL - 1) and (max-width: $desktop - 1) {
+    @content;
+  }
+}
+@mixin for-macBook16 {
+  @media (min-width: $macBook16) and (max-width: $macBook16) {
     @content;
   }
 }
 @mixin for-desktop {
-  @media (min-width: $tablet) {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+@mixin for-retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     @content;
   }
 }
